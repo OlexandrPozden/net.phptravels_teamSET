@@ -8,30 +8,43 @@ public class AccountPage  extends BaseClass {
     public AccountPage(WebDriver driver){
         super(driver);
     }
+
+
     @FindBy(css="a[href='#profile']")
     private WebElement My_Profile;
+
     @FindBy(css="a[href='#wishlist']")
     private WebElement Wishlist;
+
     @FindBy(css="a[href='#newsletter']")
     private WebElement NewsLetter;
+
     @FindBy(css="a[href='#bookings']")
     private WebElement Bookings;
+
     //This elements are workable when u  clicked on My Profile
 
     @FindBy(name = "email")
     private  WebElement EmailField;
+
     @FindBy(name = "password")
     private  WebElement PasswordField;
+
     @FindBy(name = "confirmpassword")
     private  WebElement ConfirmPasswordField;
+
     @FindBy(name = "address1")
     private  WebElement AddressField;
+
     @FindBy(name = "address2")
     private  WebElement Address2Field;
+
     @FindBy(name = "city")
     private  WebElement CityField;
+
     @FindBy(name = "state")
     private  WebElement StateField;
+
     @FindBy(name = "zip")
     private  WebElement PostalZipCodeField;
     @FindBy(name = "phone")
@@ -121,10 +134,6 @@ public class AccountPage  extends BaseClass {
         this.Slider.click();
         return this;
     }
-    //public LoginPage Logout(){
-    //click();
-    //return LoginPage
-    // }
 
 
 

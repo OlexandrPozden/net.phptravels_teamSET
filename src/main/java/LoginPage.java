@@ -1,3 +1,4 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,8 +16,8 @@ public class LoginPage extends BaseClass {
     @FindBy(name = "password")
     private WebElement passwordField;
 
-    @FindBy(name = "font-size: 16px;")
-    private WebElement submitButton;
+    @FindBy(className = "loginbtn")
+    private WebElement loginButton;
 
     public LoginPage setEmail(String value) {
         emailField.sendKeys(value);
@@ -28,8 +29,8 @@ public class LoginPage extends BaseClass {
         return this;
     }
 
-    public AccountPage clickSubmitButton (){
-        submitButton.click();
+    public AccountPage clickLoginButton (){
+        loginButton.click();
         return new AccountPage(driver);
     }
 
