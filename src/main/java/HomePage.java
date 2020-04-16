@@ -36,10 +36,10 @@ public class HomePage extends BaseClass{
     @FindBy(css="#tours .btn")
     private WebElement SearchButton_Tours;
 
-    public void OpenLoginPage() {// type = LoginPage
+    public LoginPage OpenLoginPage() {// type = LoginPage
         this.DropDownMyAccount.click();
         this.LogInElement.click();
-       // return new LoginPage(driver);
+        return new LoginPage(driver);
     }
     public SignUpPage OpenSignUpPage(){  // type = SignUpPage
         this.DropDownMyAccount.click();
@@ -64,12 +64,12 @@ public class HomePage extends BaseClass{
         this.ToDate_Tours.sendKeys(Keys.ENTER);
         return this;
     }
-    public void OpenToursPage(){// type = ToursPage
+    public PageWithTours OpenPageWithTours(){// type = ToursPage
         this.ToursTab.click();
         this.setDestination_div_Tours("Lviv");
         this.setFromDate_Tours("17/04/2020");
         this.setToDate_Tours("19/04/2020");
-        //return new ToursPage(driver);
+        return new PageWithTours(driver);
     }
 
 
