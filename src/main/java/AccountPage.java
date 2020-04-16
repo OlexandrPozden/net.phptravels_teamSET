@@ -121,6 +121,10 @@ public class AccountPage  extends BaseClass {
         this.Slider.click();
         return this;
     }
+    //public LoginPage Logout(){
+    //click();
+    //return LoginPage
+    // }
 
 
 
