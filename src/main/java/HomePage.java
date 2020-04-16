@@ -36,28 +36,40 @@ public class HomePage extends BaseClass{
     @FindBy(css="#tours .btn")
     private WebElement SearchButton_Tours;
 
-    public void OpenLoginPage() {
+    public void OpenLoginPage() {// type = LoginPage
         this.DropDownMyAccount.click();
         this.LogInElement.click();
-        //return new SignUpPage(driver);
+       // return new LoginPage(driver);
     }
-    public void OpenSignUpPage(){
+    public SignUpPage OpenSignUpPage(){  // type = SignUpPage
         this.DropDownMyAccount.click();
         this.SignUpElement.click();
+        return new SignUpPage(driver);
     }
-    public void OpenToursPage(){
-        this.ToursTab.click();
+    public HomePage setDestination_div_Tours(String value){
         this.Destination_div_Tours.click();
-        this.DestinationInput_Tours.sendKeys("Lviv");
+        this.DestinationInput_Tours.sendKeys(value);
         this.ChooseFromList_Destination.click();
+        return this;
+    }
+    public HomePage setFromDate_Tours(String value){
         this.FromDate_Tours.click();
-        this.FromDate_Tours.sendKeys("17/04/2020");
+        this.FromDate_Tours.sendKeys(value);
         this.FromDate_Tours.sendKeys(Keys.ENTER);
-       // this.Destination_div_Tours.click();
+        return this;
+    }
+    public HomePage setToDate_Tours(String value){
         this.ToDate_Tours.click();
-        this.ToDate_Tours.sendKeys("19/04/2020");
+        this.ToDate_Tours.sendKeys(value);
         this.ToDate_Tours.sendKeys(Keys.ENTER);
-        //this.SearchButton_Tours.click();
+        return this;
+    }
+    public void OpenToursPage(){// type = ToursPage
+        this.ToursTab.click();
+        this.setDestination_div_Tours("Lviv");
+        this.setFromDate_Tours("17/04/2020");
+        this.setToDate_Tours("19/04/2020");
+        //return new ToursPage(driver);
     }
 
 
