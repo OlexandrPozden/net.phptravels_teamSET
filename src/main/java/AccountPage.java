@@ -93,12 +93,12 @@ public class AccountPage  extends BaseClass {
         return this.AddressField.getText();
     }
     public AccountPage Set_Address1(String value){
-        this.My_Profile.click();
+        this.AddressField.click();
         this.AddressField.sendKeys(value);
         return this;
     }
     public AccountPage Set_Address2(String value){
-        this.My_Profile.click();
+        this.Address2Field.click();
         this.Address2Field.sendKeys(value);
         return this;
     }
@@ -113,22 +113,22 @@ public class AccountPage  extends BaseClass {
         return this;
     }
     public AccountPage Set_City(String value){
-        this.My_Profile.click();
+        this.CityField.click();
         this.CityField.sendKeys(value);
         return this;
     }
     public AccountPage Set_ZipPostalCode(String value){
-        this.My_Profile.click();
+        this.PostalZipCodeField.click();
         this.PostalZipCodeField.sendKeys(value);
         return this;
     }
     public AccountPage Set_State(String value){
-        this.My_Profile.click();
+        this.StateField.click();
         this.StateField.sendKeys(value);
         return this;
     }
     public AccountPage Set_email(String value){
-        this.My_Profile.click();
+        this.EmailField.click();
         this.EmailField.sendKeys(value);
         return this;
     }
@@ -139,7 +139,7 @@ public class AccountPage  extends BaseClass {
         return this;
     }
     public AccountPage Set_phone(String value){
-        this.My_Profile.click();
+        this.PhoneField.click();
         this.PhoneField.sendKeys(value);
         return this;
     }
