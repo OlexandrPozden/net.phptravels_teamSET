@@ -12,14 +12,14 @@ public class SignUptest {
 
         actualresult="dfd";
                acp= bsc.openHomePage().OpenSignUpPage()
-        .goToAccountPage("Alex","Meinhom","7894651233","alextest3@ukr.net","123456");
+        .goToAccountPage("Alex","Meinhom","7894651233","alextest6@ukr.net","123456");
                actualresult=acp.getText_UserName();
         Assert.assertEquals(actualresult,"Hi, Alex Meinhom");
     }
     @Test
     public void test2(){
 
-        actualresult=acp.LogOut().goToAccountPage("alextest3@ukr.net","123456").getText_UserName();
+        actualresult=acp.LogOut().goToAccountPage("alextest6@ukr.net","123456").getText_UserName();
         Assert.assertEquals(actualresult,"Hi, Alex Meinhom");
     }
 }
