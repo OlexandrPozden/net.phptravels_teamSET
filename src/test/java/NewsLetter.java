@@ -8,11 +8,11 @@ public class NewsLetter {
 
         baseClass
                 .openHomePage()
-                .goToLoginPage()
-                .setEmail("test@gmail.com")
-                .setPassword("123456")
-                .clickLoginButton();
+                .goToSignUpPage()
+                .goToAccountPage()
 
-
+                .OpenNewsLetter()
+                .subscribeSlider();
     }
+
 }

@@ -2,10 +2,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import sun.security.krb5.internal.CredentialsUtil;
 
 public class AccountPage  extends BaseClass {
-    public AccountPage(WebDriver driver){
+    public AccountPage (WebDriver driver){
         super(driver);
     }
 
@@ -62,6 +61,15 @@ public class AccountPage  extends BaseClass {
     //back to up
     @FindBy(id="back-to-top")
     private WebElement BackToTopButton;
+
+    @FindBy(className = "dropdown-login")
+    private WebElement dropdownLogin;
+
+    @FindBy(xpath = "//a[text()='Logout']")
+    private WebElement logoutButton;
+
+    @FindBy(className = "slider")
+    private WebElement subscribeSlider;
 
     //tabs Open methods
     public AccountPage OpenMy_Profile(){ this.My_Profile.click(); return this; }
@@ -132,6 +140,17 @@ public class AccountPage  extends BaseClass {
     public AccountPage Change_Slider(){
         this.NewsLetter.click();
         this.Slider.click();
+        return this;
+    }
+
+    public LoginPage logout()  {
+        dropdownLogin.click();
+        logoutButton.click();
+        return new LoginPage(driver);
+    }
+
+    public AccountPage subscribeSlider(){
+        subscribeSlider.click();
         return this;
     }
 

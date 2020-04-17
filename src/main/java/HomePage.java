@@ -3,8 +3,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends BaseClass {
-    public HomePage () {}
+
+public class HomePage extends BaseClass{
+
+    public HomePage(){}
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -30,12 +32,20 @@ public class HomePage extends BaseClass {
     @FindBy(xpath = "//form[@name= 'HOTELS']//button[contains(text(), 'Search')]")
     private WebElement searchButton;
 
-    @FindBy(xpath = "//div[contains(@class, 'dropdown-login')]//a[contains (text(), 'Login')]")
-    private WebElement loginElement;
+    @FindBy(className = "dropdown-login")
+    private WebElement DropDownMyAccount; //My account (you click there, when you want to log in, or sign up)
 
-    public LoginPage goToLoginPage() {
+    @FindBy(xpath = "//div[contains(@class, 'dropdown-login')]//a[contains (text(), 'Login')]" )
+    private  WebElement LogInElement;  // Login button
+
+    public SignUpPage goToSignUpPage() {
         this.logInDropDown.click();
-        this.loginElement.click();
+        this.signUpElement.click();
+        return new SignUpPage(driver);
+    }
+    public LoginPage OpenLoginPage() {// type = LoginPage
+        this.DropDownMyAccount.click();
+        this.LogInElement.click();
         return new LoginPage(driver);
     }
 
@@ -50,5 +60,6 @@ public class HomePage extends BaseClass {
         this.dropdownItem.click();
         return this;
     }
+
 
 }
