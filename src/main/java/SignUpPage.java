@@ -59,17 +59,20 @@ public class SignUpPage extends BaseClass{
         confirmPassword.sendKeys(value);
         return this;
     }
-
+    public AccountPage ClickSubmitButton(){
+        this.signUpBtn.click();
+        return new AccountPage(driver);
+    }
     public String getNameOfButton(){
         return signUpBtn.getText();
     }
-    public AccountPage goToAccountPage(){
-        this.setFirstName("Mark");
-        this.setLastName("Wolberg");
-        this.setPhone("123456789");
-        this.setEmail("test10@mail.com");
-        this.setPassword("test11");
-        this.setConfirmPassword("test11");
+    public AccountPage goToAccountPage(String FirstName, String LastName, String Phone, String Email, String password){
+        this.setFirstName(FirstName);
+        this.setLastName(LastName);
+        this.setPhone(Phone);
+        this.setEmail(Email);
+        this.setPassword(password);
+        this.setConfirmPassword(password);
         this.signUpBtn.click();
         return new AccountPage(driver);
     }

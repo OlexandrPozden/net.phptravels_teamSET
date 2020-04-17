@@ -15,7 +15,7 @@ public class LoginPage extends BaseClass {
     @FindBy(name = "password")
     private WebElement passwordField;
 
-    @FindBy(name = "font-size: 16px;")
+    @FindBy(className = "loginbtn")
     private WebElement submitButton;
 
     public LoginPage setEmail(String value) {
@@ -30,6 +30,12 @@ public class LoginPage extends BaseClass {
 
     public AccountPage clickSubmitButton (){
         submitButton.click();
+        return new AccountPage(driver);
+    }
+    public AccountPage goToAccountPage(String email, String password){
+        this.setEmail(email);
+        this.setPassword(password);
+        this.clickSubmitButton();
         return new AccountPage(driver);
     }
 
