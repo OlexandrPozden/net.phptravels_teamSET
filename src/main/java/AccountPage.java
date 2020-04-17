@@ -69,7 +69,7 @@ public class AccountPage  extends BaseClass {
         return new LoginPage(driver);
     }
 
-
+    //return Main Entry Name of User on Account Page
     public String getText_UserName(){
         return this.UserName.getText();
 
