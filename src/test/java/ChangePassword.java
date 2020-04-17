@@ -1,8 +1,10 @@
+import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ChangePassword {
     @Test
+    @Description("Changes password and checks has it changed")
     public void test1(){
         String actres;
        BaseClass bsc=new BaseClass();

@@ -1,8 +1,10 @@
+import jdk.jfr.Description;
 import org.testng.annotations.Test;
 
 public class NewsLetter {
 
     @Test
+    @Description("Turns on newsletter and check does it save choice")
     public void testNewsLetter (){
         BaseClass baseClass = new BaseClass();
 

@@ -1,8 +1,10 @@
+import jdk.jfr.Description;
 import org.testng.annotations.Test;
 import org.testng.Assert;
 
 public class TestAddress {
     @Test
+    @Description("changes address1")
     public void testAddress1(){
 
         String email = "testng4@n.g",
