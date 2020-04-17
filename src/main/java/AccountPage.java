@@ -147,7 +147,7 @@ public class AccountPage  extends BaseClass {
         this.BackToTopButton.click();
         return this;
     }
-    public AccountPage Change_Slider(){
+    public AccountPage subscribeSlider(){
         this.NewsLetter.click();
         this.Slider.click();
         return this;
