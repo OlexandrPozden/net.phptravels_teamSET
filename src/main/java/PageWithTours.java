@@ -11,7 +11,7 @@ public class PageWithTours extends BaseClass{
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css = "input[value = '225102P1']")
+    @FindBy(xpath = "//input[@value='137357P10']/../button")
     private WebElement buttonSmallSearch;
 
     public WishesPage goToPageWithWishes(){

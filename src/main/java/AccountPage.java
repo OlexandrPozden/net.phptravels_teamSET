@@ -59,6 +59,9 @@ public class AccountPage  extends BaseClass {
     @FindBy(xpath = "//a[text()='Logout']")
     private WebElement logoutButton;
 
+    //Logo (ref to homepage)
+    @FindBy(xpath = "//img[@alt='My Account']/..")
+    private  WebElement TopRightLogo;
     //logout
     public LoginPage LogOut(){
         this.dropdownLogin.click();
@@ -70,6 +73,12 @@ public class AccountPage  extends BaseClass {
     public String getText_UserName(){
         return this.UserName.getText();
 
+    }
+    //wishlist
+    @FindBy(css=".panel-body.mywishlist")
+    private WebElement WishElement;
+    public String getText_WishList(){
+        return WishElement.getText();
     }
 
     //tabs Open methods
@@ -142,6 +151,10 @@ public class AccountPage  extends BaseClass {
         this.NewsLetter.click();
         this.Slider.click();
         return this;
+    }
+    public HomePage BackToHomePage(){
+        this.TopRightLogo.click();
+        return new HomePage(driver);
     }
     //public LoginPage Logout(){
     //click();

@@ -28,7 +28,10 @@ public class BaseClass {
         driver.get("https://www.phptravels.net/home");
         return new HomePage(driver);
     }
-
+    public WishesPage AcceptAlert_WishesPage(){
+        driver.switchTo().alert().accept();
+        return  new WishesPage(driver);
+    }
     public HomePage openAdminPage() {
         beforeMet();
         driver.get("https://www.phptravels.net/admin");
